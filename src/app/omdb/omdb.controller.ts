@@ -1,18 +1,21 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
+import { FindOneDto } from './dto/findOne.dto';
+import { MovieDto } from './dto/movie.dto';
+import { MovieListDto } from './dto/movieList.dto';
+import { SearchDto } from './dto/search.dto';
 import { OmdbService } from './service/omdb.service';
-import { MovieInterface, MovieListInterface } from './interface/omdb.interface';
 
 @Controller('/')
 export class OmdbController {
   constructor(private readonly omdbService: OmdbService) {}
 
-  @Get('/:title')
-  async search(@Param('title') title: string): Promise<MovieListInterface> {
-    return this.omdbService.search(title);
+  @Get()
+  async search(@Query() params: SearchDto): Promise<MovieListDto> {
+    return this.omdbService.search(params);
   }
 
-  @Get('/movie/:id')
-  async findOne(@Param('id') id: string): Promise<MovieInterface> {
+  @Get('/movie')
+  async findOne(@Query('id') id: FindOneDto): Promise<MovieDto> {
     return this.omdbService.findByID(id);
   }
 }
