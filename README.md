@@ -1,3 +1,19 @@
+# Movie Library API
+
+API developed to consume the OMDb service.
+
+[OMDb API documentation]. (https://www.omdbapi.com/)
+
+## First step
+
+Create an '.env' file in the root of the project based on the '.env.example' file provided.
+
+## Next steps
+
+Then you can follow the standard NestJS steps given below.
+
+---
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
