@@ -43,7 +43,7 @@ export class OmdbService {
     const response = await lastValueFrom(this.httpService.get(this.url, config));
     this.logger.log(`GET findOne ${response.status} ${response.statusText}`);
 
-    const result = movieValidator({ ...response.data, Title: null });
+    const result = movieValidator(response.data);
     return result;
   }
 }
