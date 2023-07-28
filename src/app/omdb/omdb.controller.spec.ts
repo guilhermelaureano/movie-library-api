@@ -41,6 +41,7 @@ describe('OmdbController', () => {
         ],
         page: '1',
         totalPages: 5,
+        totalResults: '49',
       };
 
       jest.spyOn(omdbService, 'search').mockImplementation(() => new Promise((resolve) => resolve(result)));
