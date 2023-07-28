@@ -9,6 +9,7 @@ export function movieListValidator(data: MovieListInterface, page?: string): Mov
     list: data.Search,
     page: page ? page : '1',
     totalPages,
+    totalResults: data.totalResults,
   };
 }
 

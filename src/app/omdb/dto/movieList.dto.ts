@@ -4,4 +4,5 @@ export class MovieListDto {
   list: Array<MovieInterface>;
   page: string;
   totalPages: number;
+  totalResults: string;
 }
