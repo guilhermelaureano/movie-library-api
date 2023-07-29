@@ -14,8 +14,8 @@ export function movieListValidator(data: MovieListInterface, page?: string): Mov
 }
 
 export function movieValidator(data: MovieInterface): MovieDto {
-  const index = data.Ratings.findIndex((e) => e.Source === 'Rotten Tomatoes');
-  const tomatoes = index ? data.Ratings[index].Value : '';
+  const index = data.Ratings.findIndex((e) => e.Source === 'Rotten Tomatoes', false);
+  const tomatoes = index > 0 ? data.Ratings[index].Value : 'N/A';
 
   return {
     title: data.Title,
